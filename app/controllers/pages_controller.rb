@@ -4,15 +4,21 @@ class PagesController < ApplicationController
   def home
     @filename = params[:filename]
     # @content = params[:file].path
+
   end
 
-  # private
 
   def barcode
     @barcode = barcode_params
     # @barcode_params =
     # binding.pry
-    puts @barcode
+    # puts @barcode
+    redirect_to barcode_show_path
+  end
+
+  def show_barcode
+    @result = "successful!"
+
   end
 
   private
